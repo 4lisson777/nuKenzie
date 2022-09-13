@@ -15,7 +15,7 @@ function Form({
     const newTransaction = {
       description: description,
       type: type,
-      value: Number(value),
+      value: type === "Despesa" ? Number(-1*value) : Number(value),
     };
     setListTransactions([...listTransactions, newTransaction]);
     setFilteredList([...listTransactions, newTransaction]);
